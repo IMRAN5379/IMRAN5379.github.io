@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mohammad Imaran</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, Helvetica, sans-serif;
+            background:#0b1f3a;
+            color:white;
+            text-align:center;
+        }
+
+        .hero{
+            padding:100px 20px;
+        }
+
+        h1{
+            font-size:55px;
+            margin-bottom:10px;
+        }
+
+        h2{
+            color:#4fc3f7;
+            font-weight:normal;
+        }
+
+        p{
+            font-size:22px;
+        }
+
+        .btn{
+            display:inline-block;
+            margin:15px;
+            padding:15px 35px;
+            background:#4fc3f7;
+            color:white;
+            text-decoration:none;
+            border-radius:30px;
+        }
+
+        .btn:hover{
+            background:#0288d1;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<h1>Dr. Mohammad Imaran</h1>
+
+<h2>Physical Oceanographer</h2>
+
+<p>
+Coastal Hydrodynamics • Coupled Ocean–Wave–Sediment Modeling • Remote Sensing
+</p>
+
+<a href="#" class="btn">Download CV</a>
+
+<a href="https://github.com/IMRAN5379" class="btn">GitHub</a>
+
+</div>
+
+</body>
+</html>
