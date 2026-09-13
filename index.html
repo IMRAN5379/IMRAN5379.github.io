@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,27 +13,41 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Segoe UI,Arial,sans-serif;
-    background:linear-gradient(135deg,#001d3d,#003566,#00509d);
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#001d3d;
     color:white;
+    line-height:1.6;
 }
 
-/* Navigation */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 8%;
-    background:rgba(0,0,0,.2);
-    backdrop-filter:blur(8px);
+
+    padding:18px 8%;
+
+    background:rgba(0,18,51,.85);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(79,209,255,.15);
 }
 
 .logo{
-    font-size:28px;
+    font-size:25px;
     font-weight:bold;
     color:#4fd1ff;
 }
@@ -43,100 +58,92 @@ nav ul{
 }
 
 nav ul li{
-    margin-left:30px;
+    margin-left:28px;
 }
 
 nav ul li a{
     color:white;
     text-decoration:none;
     font-weight:500;
+    transition:.3s;
 }
 
 nav ul li a:hover{
     color:#4fd1ff;
 }
 
-/* Hero */
+/* =========================
+   HERO
+========================= */
 
 .hero{
 
-    min-height:90vh;
+    min-height:100vh;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
     text-align:center;
 
-    padding:40px;
+    padding:120px 30px 80px;
 
+    background:
+    radial-gradient(circle at 20% 20%,rgba(0,180,216,.18),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(72,202,228,.15),transparent 30%),
+    linear-gradient(135deg,#001d3d,#003566,#00509d);
 }
 
 .hero-content{
-
-    max-width:900px;
-
+    max-width:950px;
 }
 
 .hero h1{
-
-    font-size:60px;
-
-    margin-bottom:15px;
-
+    font-size:64px;
+    margin-bottom:12px;
+    letter-spacing:-1px;
 }
 
 .hero h2{
-
     color:#4fd1ff;
-
     font-weight:400;
-
-    margin-bottom:25px;
-
+    font-size:28px;
+    margin-bottom:28px;
 }
 
 .hero p{
-
-    font-size:22px;
-
-    line-height:1.8;
-
+    font-size:21px;
+    line-height:1.9;
     color:#dbe9ff;
-
 }
 
 .tagline{
-
     margin-top:30px;
 
-    font-size:24px;
+    font-size:23px;
 
     font-style:italic;
 
     color:#9fdcff;
-
 }
 
-/* Buttons */
+/* =========================
+   BUTTONS
+========================= */
 
 .buttons{
-
-    margin-top:40px;
-
+    margin-top:38px;
 }
 
 .btn{
 
     display:inline-block;
 
-    margin:10px;
+    margin:8px;
 
-    padding:15px 35px;
+    padding:13px 30px;
 
-    border-radius:40px;
+    border-radius:35px;
 
     text-decoration:none;
 
@@ -148,6 +155,7 @@ nav ul li a:hover{
 
     transition:.3s;
 
+    border:1px solid rgba(255,255,255,.15);
 }
 
 .btn:hover{
@@ -156,47 +164,473 @@ nav ul li a:hover{
 
     transform:translateY(-3px);
 
+    box-shadow:0 10px 30px rgba(0,180,216,.25);
 }
 
-/* Footer */
+.btn.secondary{
+    background:transparent;
+    border:1px solid #4fd1ff;
+}
+
+.btn.secondary:hover{
+    background:#0096c7;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section:not(.hero){
+
+    padding:90px 8%;
+
+    background:#f5f9fc;
+
+    color:#102a43;
+}
+
+.section-title{
+
+    text-align:center;
+
+    font-size:38px;
+
+    margin-bottom:15px;
+
+    color:#003566;
+}
+
+.section-subtitle{
+
+    text-align:center;
+
+    max-width:750px;
+
+    margin:0 auto 45px;
+
+    color:#526777;
+
+    font-size:17px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    text-align:center;
+
+    font-size:18px;
+
+    color:#34495e;
+}
+
+.about strong{
+    color:#003566;
+}
+
+/* =========================
+   RESEARCH
+========================= */
+
+.research-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.research-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 30px rgba(0,30,60,.08);
+
+    border-top:4px solid #0096c7;
+
+    transition:.3s;
+}
+
+.research-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:0 18px 40px rgba(0,30,60,.14);
+}
+
+.research-card h3{
+
+    color:#003566;
+
+    margin-bottom:12px;
+
+    font-size:21px;
+}
+
+.research-card p{
+
+    color:#526777;
+
+    font-size:15px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects{
+
+    background:
+    linear-gradient(
+        180deg,
+        #eef7fb,
+        #f8fbfd
+    ) !important;
+}
+
+.project-grid{
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+}
+
+.project-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 35px rgba(0,30,60,.1);
+
+    transition:.3s;
+
+    border:1px solid #e1edf4;
+}
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,50,90,.18);
+}
+
+.project-header{
+
+    padding:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #003566,
+        #0077b6
+    );
+
+    color:white;
+}
+
+.project-header h3{
+
+    font-size:21px;
+
+    margin-bottom:5px;
+}
+
+.project-body{
+
+    padding:25px;
+}
+
+.project-body p{
+
+    color:#526777;
+
+    font-size:15px;
+
+    margin-bottom:20px;
+}
+
+.project-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-bottom:20px;
+}
+
+.tag{
+
+    padding:5px 10px;
+
+    border-radius:15px;
+
+    background:#e5f6fb;
+
+    color:#006080;
+
+    font-size:12px;
+
+    font-weight:600;
+}
+
+.project-link{
+
+    display:inline-block;
+
+    padding:9px 18px;
+
+    border-radius:20px;
+
+    background:#0096c7;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.project-link:hover{
+
+    background:#0077b6;
+}
+
+/* =========================
+   PUBLICATIONS
+========================= */
+
+.publication-list{
+
+    max-width:1000px;
+
+    margin:auto;
+}
+
+.publication{
+
+    background:white;
+
+    padding:25px;
+
+    margin-bottom:18px;
+
+    border-left:5px solid #0096c7;
+
+    border-radius:8px;
+
+    box-shadow:0 5px 20px rgba(0,30,60,.07);
+}
+
+.publication h3{
+
+    font-size:17px;
+
+    color:#003566;
+
+    margin-bottom:7px;
+}
+
+.publication p{
+
+    font-size:14px;
+
+    color:#526777;
+}
+
+.publication a{
+
+    color:#0077b6;
+
+    text-decoration:none;
+}
+
+/* =========================
+   CV
+========================= */
+
+.cv-section{
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #003566,
+        #00509d
+    ) !important;
+
+    color:white !important;
+}
+
+.cv-section .section-title{
+
+    color:white;
+}
+
+.cv-section .section-subtitle{
+
+    color:#dbe9ff;
+}
+
+.cv-button{
+
+    display:inline-block;
+
+    padding:15px 38px;
+
+    background:#00b4d8;
+
+    color:white;
+
+    border-radius:30px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.cv-button:hover{
+
+    background:#48cae4;
+
+    transform:translateY(-3px);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+
+    text-align:center;
+}
+
+.contact-info{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:17px;
+
+    color:#526777;
+}
+
+.contact-info a{
+
+    color:#0077b6;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
 
-    padding:25px;
+    padding:28px;
 
     text-align:center;
 
     background:#001233;
 
-    color:#bbbbbb;
+    color:#aebdcc;
 
+    font-size:14px;
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
-.hero h1{
+    nav{
 
-font-size:42px;
+        position:relative;
 
-}
+        flex-direction:column;
 
-.hero p{
+        padding:20px;
+    }
 
-font-size:18px;
+    nav ul{
 
-}
+        margin-top:15px;
 
-nav{
+        flex-wrap:wrap;
 
-flex-direction:column;
+        justify-content:center;
+    }
 
-}
+    nav ul li{
 
-nav ul{
+        margin:5px 10px;
+    }
 
-margin-top:15px;
+    .hero{
 
-}
+        padding-top:70px;
+    }
+
+    .hero h1{
+
+        font-size:42px;
+    }
+
+    .hero h2{
+
+        font-size:21px;
+    }
+
+    .hero p{
+
+        font-size:17px;
+    }
+
+    .tagline{
+
+        font-size:18px;
+    }
+
+    section:not(.hero){
+
+        padding:65px 6%;
+    }
 
 }
 
@@ -206,6 +640,11 @@ margin-top:15px;
 
 <body>
 
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
 <nav>
 
 <div class="logo">
@@ -214,29 +653,38 @@ Dr. Mohammad Imaran
 
 <ul>
 
-<li><a href="#">Home</a></li>
+<li><a href="#home">Home</a></li>
 
-<li><a href="#">About</a></li>
+<li><a href="#about">About</a></li>
 
-<li><a href="#">Research</a></li>
+<li><a href="#research">Research</a></li>
 
-<li><a href="#">Projects</a></li>
+<li><a href="#projects">Projects</a></li>
 
-<li><a href="#">Publications</a></li>
+<li><a href="#publications">Publications</a></li>
 
-<li><a href="#">Contact</a></li>
+<li><a href="#cv">CV</a></li>
+
+<li><a href="#contact">Contact</a></li>
 
 </ul>
 
 </nav>
 
-<section class="hero">
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
 
 <div class="hero-content">
 
 <h1>Dr. Mohammad Imaran</h1>
 
-<h2>Physical Oceanographer | Coastal Ocean Modeler</h2>
+<h2>
+Physical Oceanographer | Coastal Ocean Modeler
+</h2>
 
 <p>
 
@@ -257,11 +705,28 @@ satellite observations, and computational geoscience."
 
 <div class="buttons">
 
-<a href="#" class="btn">Download CV</a>
+<a href="cv/Mohd_Imaran_Academic_CV.pdf"
+   class="btn">
 
-<a href="https://scholar.google.com/" class="btn">Google Scholar</a>
+Download CV
 
-<a href="https://github.com/IMRAN5379" class="btn">GitHub</a>
+</a>
+
+<a href="https://scholar.google.com/"
+   target="_blank"
+   class="btn secondary">
+
+Google Scholar
+
+</a>
+
+<a href="https://github.com/IMRAN5379"
+   target="_blank"
+   class="btn secondary">
+
+GitHub
+
+</a>
 
 </div>
 
@@ -269,11 +734,615 @@ satellite observations, and computational geoscience."
 
 </section>
 
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<h2 class="section-title">
+About Me
+</h2>
+
+<p class="section-subtitle">
+Researcher working at the intersection of ocean modelling,
+sediment dynamics, Earth observation and computational geoscience.
+</p>
+
+<div class="about">
+
+<p>
+
+I am a <strong>Physical Oceanographer and Coastal Ocean Modeler</strong>
+with a Ph.D. from the Indian Institute of Technology Kharagpur.
+
+My doctoral research focused on the numerical modelling of
+<strong>sediment transport and coastal processes in the Northern Bay of Bengal</strong>
+using the Regional Ocean Modeling System (ROMS) and the
+Community Sediment Transport Modeling System (CSTMS).
+
+</p>
+
+<br>
+
+<p>
+
+My broader research interests include
+<strong>ocean–coastal dynamics, sediment transport,
+hydrodynamics, wave–current interactions, Earth observation,
+remote sensing, hydrological modelling and computational geoscience.</strong>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESEARCH
+========================= -->
+
+<section id="research">
+
+<h2 class="section-title">
+Research
+</h2>
+
+<p class="section-subtitle">
+My research combines numerical models, satellite observations,
+geospatial analysis and scientific computing.
+</p>
+
+<div class="research-grid">
+
+<div class="research-card">
+
+<h3>🌊 Ocean & Coastal Modelling</h3>
+
+<p>
+ROMS-based numerical modelling of coastal circulation,
+sediment transport, hydrodynamics and ocean–coast interactions.
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<h3>🌎 Sediment Dynamics</h3>
+
+<p>
+Cohesive and non-cohesive sediment transport,
+riverine sediment input, seabed processes and
+coastal morphological evolution.
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<h3>🌐 Earth Observation</h3>
+
+<p>
+Sentinel-1 SAR, Sentinel-2 optical data,
+Google Earth Engine and satellite-based
+environmental monitoring.
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<h3>🛰️ Geospatial Intelligence</h3>
+
+<p>
+Flood mapping, waterlogging analysis,
+hazard assessment, GIS and geospatial
+decision-support workflows.
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<h3>🌧️ Hydrological Modelling</h3>
+
+<p>
+River discharge, flood processes and
+hydrological modelling using tools such as
+HEC-RAS and SWAT.
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<h3>🤖 Geoscience AI</h3>
+
+<p>
+Application of machine learning and
+computational methods to Earth observation
+and environmental datasets.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects" class="projects">
+
+<h2 class="section-title">
+Projects
+</h2>
+
+<p class="section-subtitle">
+Selected research, modelling and geospatial intelligence projects.
+</p>
+
+<div class="project-grid">
+
+
+<!-- PROJECT 1 -->
+
+<div class="project-card">
+
+<div class="project-header">
+
+<h3>
+ROMS-CSTMS Sediment Transport Analyzer
+</h3>
+
+</div>
+
+<div class="project-body">
+
+<p>
+
+Interactive analysis framework for exploring
+ROMS-CSTMS sediment transport simulations,
+including hydrodynamics, sediment concentration
+and coastal sediment dynamics.
+
+</p>
+
+<div class="project-tags">
+
+<span class="tag">ROMS</span>
+
+<span class="tag">CSTMS</span>
+
+<span class="tag">Python</span>
+
+<span class="tag">Sediment</span>
+
+<span class="tag">Ocean Modelling</span>
+
+</div>
+
+<a
+href="https://roms-coawst-sediment-transport-analyzer.ai.studio/"
+target="_blank"
+class="project-link">
+
+Open Project →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 2 -->
+
+<div class="project-card">
+
+<div class="project-header">
+
+<h3>
+HydroFusion-AI Flood Mapper
+</h3>
+
+</div>
+
+<div class="project-body">
+
+<p>
+
+Integrated satellite-based flood mapping workflow
+combining Sentinel-1 SAR, optical observations,
+DEM/slope information, precipitation and
+permanent-water constraints.
+
+</p>
+
+<div class="project-tags">
+
+<span class="tag">Sentinel-1</span>
+
+<span class="tag">Sentinel-2</span>
+
+<span class="tag">GEE</span>
+
+<span class="tag">SAR</span>
+
+<span class="tag">AI</span>
+
+</div>
+
+<a
+href="#contact"
+class="project-link">
+
+Project Details →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 3 -->
+
+<div class="project-card">
+
+<div class="project-header">
+
+<h3>
+Northern Bay of Bengal Sediment Modelling
+</h3>
+
+</div>
+
+<div class="project-body">
+
+<p>
+
+Numerical investigation of sediment dynamics
+on the Northern Bay of Bengal shelf using
+ROMS-CSTMS, including riverine sediment,
+waves, tides and coastal hydrodynamics.
+
+</p>
+
+<div class="project-tags">
+
+<span class="tag">ROMS-CSTMS</span>
+
+<span class="tag">Bay of Bengal</span>
+
+<span class="tag">Sediment</span>
+
+<span class="tag">Morphodynamics</span>
+
+</div>
+
+<a
+href="#publications"
+class="project-link">
+
+View Research →
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT 4 -->
+
+<div class="project-card">
+
+<div class="project-header">
+
+<h3>
+Sentinel-1 Flood Mapping
+</h3>
+
+</div>
+
+<div class="project-body">
+
+<p>
+
+Near-real-time flood assessment using
+Sentinel-1 SAR, hydro-meteorological information,
+terrain constraints and Google Earth Engine.
+
+</p>
+
+<div class="project-tags">
+
+<span class="tag">Sentinel-1</span>
+
+<span class="tag">SAR</span>
+
+<span class="tag">Flood</span>
+
+<span class="tag">GEE</span>
+
+<span class="tag">GIS</span>
+
+</div>
+
+<a
+href="#contact"
+class="project-link">
+
+Learn More →
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PUBLICATIONS
+========================= -->
+
+<section id="publications">
+
+<h2 class="section-title">
+Selected Publications
+</h2>
+
+<p class="section-subtitle">
+Research publications arising from doctoral and Earth-observation work.
+</p>
+
+<div class="publication-list">
+
+
+<div class="publication">
+
+<h3>
+A high-resolution hydrodynamics and sediment dataset
+in the coastline waters of the Northern Bay of Bengal
+</h3>
+
+<p>
+
+Imaran, M., Chakraborty, A., & Tripathy, S. (2024).
+<strong>Data in Brief.</strong>
+
+<br>
+
+DOI:
+<a href="https://doi.org/10.1016/j.dib.2024.110577"
+target="_blank">
+
+10.1016/j.dib.2024.110577
+
+</a>
+
+</p>
+
+</div>
+
+
+<div class="publication">
+
+<h3>
+Wavelet analysis of discharge and sediment load for the
+Subarnarekha, Brahmani, and Mahanadi rivers of India
+</h3>
+
+<p>
+
+Imaran, M., Chakraborty, A., & Tripathy, S. (2024).
+
+<strong>
+Hydrological Sciences Journal.
+</strong>
+
+<br>
+
+DOI:
+<a href="https://doi.org/10.1080/02626667.2024.2427355"
+target="_blank">
+
+10.1080/02626667.2024.2427355
+
+</a>
+
+</p>
+
+</div>
+
+
+<div class="publication">
+
+<h3>
+Application of ROMS-CSTMS to Analyze Sediment Dynamics
+and Coastal Morphological Changes in the Northern Bay of Bengal
+</h3>
+
+<p>
+
+Imaran, M., Chakraborty, A., & Tripathy, S. (2025).
+
+<strong>
+Modeling Earth Systems and Environment.
+</strong>
+
+<br>
+
+Status: Under revision.
+
+</p>
+
+</div>
+
+
+<div class="publication">
+
+<h3>
+Skill assessment of GloFAS-ERA5 operational river discharge
+for the major Indian river catchments
+</h3>
+
+<p>
+
+Imaran, M., Chakraborty, A., & Tripathy, S. (2022).
+
+<strong>
+International Journal of River Basin Management.
+</strong>
+
+<br>
+
+Status: Under revision.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CV
+========================= -->
+
+<section id="cv" class="cv-section">
+
+<h2 class="section-title">
+Curriculum Vitae
+</h2>
+
+<p class="section-subtitle">
+
+Download my academic CV for detailed information about
+my education, research experience, publications,
+technical skills and professional activities.
+
+</p>
+
+<a
+href="cv/Mohd_Imaran_Academic_CV.pdf"
+class="cv-button"
+download>
+
+Download Academic CV
+
+</a>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact">
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<p class="section-subtitle">
+For research collaborations, postdoctoral opportunities,
+academic discussions and scientific projects.
+</p>
+
+<div class="contact-info">
+
+<p>
+
+<strong>Email:</strong>
+
+<a href="mailto:imranrock672@gmail.com">
+
+imranrock672@gmail.com
+
+</a>
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Academic Email:</strong>
+
+<a href="mailto:imranrock672@iitkgp.ac.in">
+
+imranrock672@iitkgp.ac.in
+
+</a>
+
+</p>
+
+<br>
+
+<p>
+
+<strong>GitHub:</strong>
+
+<a
+href="https://github.com/IMRAN5379"
+target="_blank">
+
+github.com/IMRAN5379
+
+</a>
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Research Focus:</strong>
+
+Physical Oceanography • Coastal Modelling •
+Sediment Dynamics • Earth Observation
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-© 2026 Dr. Mohammad Imaran | Physical Oceanographer
+© 2026 Dr. Mohammad Imaran |
+
+Physical Oceanographer & Coastal Ocean Modeler
 
 </footer>
 
+
 </body>
+
 </html>
